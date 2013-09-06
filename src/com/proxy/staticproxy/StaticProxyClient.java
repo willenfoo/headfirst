@@ -4,7 +4,11 @@ public class StaticProxyClient {
 
 	public static void main(String[] args) {
          
-		StaticProxy sp = new StaticProxyLog(new StaticProxyImpl()) ;
+		StaticProxyLog spl = new StaticProxyLog(new StaticProxyImpl());
+		StaticProxyRuntime spr = new StaticProxyRuntime(spl) ;
+		StaticProxyTransactional spt = new StaticProxyTransactional(spr) ;
+		
+		StaticProxy sp = spt;
 		sp.say();
 	}
 
