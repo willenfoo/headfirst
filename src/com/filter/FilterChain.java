@@ -3,7 +3,7 @@ package com.filter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilterChain {
+public class FilterChain implements Filter {
 
 	public List<Filter> filters = new ArrayList<Filter>();
 	

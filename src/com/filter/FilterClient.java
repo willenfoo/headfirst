@@ -7,7 +7,12 @@ public class FilterClient {
 		
 		
 		FilterChain filterChain = new FilterChain();
-		filterChain.add(new HtmlFilter()).add(new SensitiveFilter());
+		filterChain.add(new HtmlFilter());
+		
+		FilterChain filterChain2 = new FilterChain();
+		filterChain2.add(new SensitiveFilter());
+		
+		filterChain.add(filterChain2);
 		
 		//System.out.println(filterChain.doFilter(msg));
 		MsgProcessor mp = new MsgProcessor(msg, filterChain);
