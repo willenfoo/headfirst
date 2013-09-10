@@ -9,6 +9,7 @@ public class FilterClient {
 		FilterChain filterChain = new FilterChain();
 		filterChain.add(new HtmlFilter()).add(new SensitiveFilter());
 		
+		//System.out.println(filterChain.doFilter(msg));
 		MsgProcessor mp = new MsgProcessor(msg, filterChain);
 		System.out.println(mp.process());
 	}
