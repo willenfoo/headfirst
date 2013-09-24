@@ -9,6 +9,8 @@ public class Cat implements Comparable {
 
 	private Integer age;
 
+	private Comparator comparator = new CatAgeComparator();
+	
 	public Integer getAge() {
 		return age;
 	}
@@ -17,16 +19,26 @@ public class Cat implements Comparable {
 		this.age = age;
 	}
 
+	
+	public Comparator getComparator() {
+		return comparator;
+	}
+
+	public void setComparator(Comparator comparator) {
+		this.comparator = comparator;
+	}
+
 	@Override
 	public int compareTo(Object obj) {
-		Cat cat = (Cat)obj;
+		/*Cat cat = (Cat)obj;
 		if (cat.getAge() > this.age) {
 			return 1;
 		} else if (cat.getAge() < this.age) {
 			return -1;
 		} else {
 			return 0;
-		}
+		}*/
+		return comparator.compare(this, obj);
 	}
 	
 }

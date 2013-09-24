@@ -7,7 +7,7 @@ public class StrategyClient {
 	 */
 	public static void main(String[] args) {
 		Integer[] array = new Integer[]{12, 21, 22, 34, 1, 3};
-		Cat[] cats = {new Cat(21),new Cat(20),new Cat(16)};
+		Cat[] cats = {new Cat(18),new Cat(20),new Cat(33)};
 		DataSorter.sort(cats);
 		
 		/*for (Integer integer : array) {
